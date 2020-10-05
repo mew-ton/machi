@@ -1,33 +1,33 @@
 # machi
 
-## ŠT—v
+## æ¦‚è¦
 
-// ŠT—v
+// æ¦‚è¦
 
 ## StartUp
 
 ### Dependencies
 
-// •K—v‚Èƒ‚ƒWƒ…[ƒ‹—Þ
+// å¿…è¦ãªãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«é¡ž
 
 ### Run
 
-// ƒ‹[ƒgƒvƒƒWƒFƒNƒg‚ÉŽÀsƒRƒ}ƒ“ƒh‚ð”z”õ & ŽÀsƒRƒ}ƒ“ƒh
+// ãƒ«ãƒ¼ãƒˆãƒ—ãƒ­ã‚¸ã‚§ã‚¯ãƒˆã«å®Ÿè¡Œã‚³ãƒžãƒ³ãƒ‰ã‚’é…å‚™ & å®Ÿè¡Œã‚³ãƒžãƒ³ãƒ‰
 
-## ƒTƒuƒvƒƒWƒFƒNƒg
+## ã‚µãƒ–ãƒ—ãƒ­ã‚¸ã‚§ã‚¯ãƒˆ
 
 ### machi-api
 
-// Web APIŽÀ‘••”•ª
+// Web APIå®Ÿè£…éƒ¨åˆ†
 
 ### machi-api-test
 
-// Web API“®ìƒeƒXƒg
+// Web APIå‹•ä½œãƒ†ã‚¹ãƒˆ
 
 ### machi-swagger
 
-// APIÝŒvŠÖ˜A
+// APIè¨­è¨ˆé–¢é€£
 
 ### machi-docker
 
-// ŽÀs‚É•K—v‚ÈŠeŽíDocker image’è‹`—Þ
+// å®Ÿè¡Œã«å¿…è¦ãªå„ç¨®Docker imageå®šç¾©é¡ž
