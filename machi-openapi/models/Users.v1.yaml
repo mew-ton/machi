@@ -1,0 +1,31 @@
+title: Commons
+type: object
+description: ''
+x-examples:
+  found user by id:
+    query:
+      id: 1
+    size: 1
+    users:
+    - id: 1
+      name: string
+      email: user@example.com
+      password: pa$$word
+      birtyday: '2019-08-24'
+      gender: not known
+      phone: string
+      address:
+        prefecture: string
+        postalCode: string
+        address: string
+properties:
+  query:
+    "$ref": "./Query.v1.yaml"
+  size:
+    type: integer
+  users:
+    type: array
+    items:
+      "$ref": "./User.v1.yaml"
+required:
+- query
