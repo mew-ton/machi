@@ -1,0 +1,22 @@
+{
+    "compilerOptions": {
+        "allowJs": true,
+        "checkJs": false,
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
+
+        "module": "ESNext",
+        "target": "ESNext",
+        "noEmit": true,
+        "pretty": true,
+        "alwaysStrict": true,
+        "strict": true,
+        "noImplicitAny": true,
+        "moduleResolution": "node",
+        "resolveJsonModule": true,
+
+        "plugins": [{
+            "name": "typescript-deno-plugin"
+        }]
+    }
+}

@@ -5,6 +5,31 @@ info:
 servers:
     - url: http://localhost:3000
 paths:
+    "/user":
+        post:
+            summary: ""
+            operationId: post-user
+            responses:
+                "201":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                "$ref": "#/components/schemas/ResponseUser"
+                "400":
+                    description: Bad Request
+                    content:
+                        application/jaon:
+                            schema:
+                                "$ref": "#/components/schemas/ResponseUser"
+                "404":
+                    description: Not Found
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            "$ref": "#/components/schemas/UserDraft"
+
     "/user/{id}":
         parameters:
             - schema:
@@ -21,7 +46,15 @@ paths:
                     content:
                         application/jaon:
                             schema:
-                                "$ref": "#/components/schemas/User"
+                                "$ref": "#/components/schemas/ResponseUser"
+                "400":
+                    description: Bad Request
+                    content:
+                        application/jaon:
+                            schema:
+                                "$ref": "#/components/schemas/ResponseUser"
+                "404":
+                    description: Not Found
             operationId: put-user-id
             requestBody:
                 content:
@@ -34,6 +67,8 @@ paths:
             responses:
                 "204":
                     description: No Content
+                "404":
+                    description: Not Found
             operationId: delete-user-id
         get:
             summary: get user
@@ -45,6 +80,8 @@ paths:
                         application/json:
                             schema:
                                 "$ref": "#/components/schemas/User"
+                "404":
+                    description: Not Found
             operationId: get-user-id
     "/users":
         get:
@@ -77,24 +114,12 @@ paths:
                     application/json:
                         schema:
                             "$ref": "#/components/schemas/UserQuery"
-    "/user":
-        post:
-            summary: ""
-            operationId: post-user
-            responses:
-                "200":
-                    description: OK
-                    content:
-                        application/json:
-                            schema:
-                                "$ref": "#/components/schemas/User"
-            requestBody:
-                content:
-                    application/json:
-                        schema:
-                            "$ref": "#/components/schemas/UserDraft"
 components:
     schemas:
+        ResponseError:
+            "$ref": "./models/ResponseError.yaml#/"
+        ResponseUser:
+            "$ref": "./models/ResponseUser.yaml#/"
         User:
             "$ref": "./models/User.v1.yaml#/"
         Users:
