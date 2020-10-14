@@ -23,6 +23,10 @@ export namespace Genders {
     ];
   }
 
+  export function numValues(): number[] {
+    return values().map(toCode);
+  }
+
   class GenderMapper {
     private constructor(
       private readonly _code: number,

@@ -1,5 +1,5 @@
-import { registerDecorator } from "../../../deps.ts";
-import type { ValidationArguments, ValidationOptions } from "../../../deps.ts";
+import { registerDecorator } from "../../deps.ts";
+import type { ValidationArguments, ValidationOptions } from "../../deps.ts";
 
 export function ContainsAlpha(
   validationOptions?: ValidationOptions,

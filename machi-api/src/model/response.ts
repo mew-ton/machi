@@ -1,4 +1,11 @@
-import { Content, InternalServerError, status } from "../../deps.ts";
+import {
+  Content,
+  InternalServerError,
+  isDefined,
+  isNullOrUndefined,
+  log,
+  status,
+} from "../../deps.ts";
 import type { ActionResult, ValidationError } from "../../deps.ts";
 
 const { BAD_REQUEST, NOT_FOUND, OK, CREATED, NO_CONTENT } = status;
@@ -24,6 +31,12 @@ export interface ResponseError<T> extends ActionResult {
 
 export function ok<T>(body: T): Response<T> {
   return Content(body, OK) as ResponseBody<T>;
+}
+
+export function okOrNotFound<T>(
+  body?: T | null | undefined,
+): Response<T | unknown> {
+  return isDefined(body) ? ok(body) : notFound();
 }
 
 export function created<T>(body: T): Response<T> {

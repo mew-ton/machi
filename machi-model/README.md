@@ -7,6 +7,10 @@
 - (typescript) データ型を定義
 - (typescript) 各パラメータのバリデーション及びエラー時のメッセージを定義
 
-## modules (optional)
+## modules
 
-- typeorm <https://github.com/denolib/typeorm>
+### Typeorm
+
+npm版 typeorm <https://www.npmjs.com/package/typeorm> を deno向けにforkしたもの
+
+<https://github.com/denolib/typeorm>

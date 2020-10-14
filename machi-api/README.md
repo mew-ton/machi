@@ -6,16 +6,38 @@ web API サーバを起動します。
 
 ## Start up
 
-### 1. Install Modules
+### 事前にインストールするもの
 
 #### Deno
 
+javascriptのランタイムとして利用します.
+
 see: <https://github.com/denoland/deno>
 
-### 2. Start Command
+#### Docker, docker-compose
 
-#### start Web API server
+DBサーバのイメージ用に利用します.
+
+see: <https://www.docker.com>, <https://docs.docker.jp/compose/install.html>
+
+### 実行方法
+
+#### Web API サーバ開始
+
+##### 1. Docker イメージを立ち上げます
 
 ```sh
-denon run --allow-net --allow-read --config ../tsconfig.json app.ts
+cd machi-docker
+docker-compose up
 ```
+
+##### 2. Deno を実行します
+
+```sh
+cd machi-api
+deno run --allow-net --allow-read --config ../tsconfig.json app.ts
+```
+
+#### Test 実行
+
+???
