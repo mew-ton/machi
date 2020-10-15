@@ -9,7 +9,7 @@ export const options: ConnectionOptions = {
   password: "machi",
   database: "machi",
   synchronize: true,
-  logging: true,
+  logging: false,
   entities: entities(),
   migrations: [],
   subscribers: [],

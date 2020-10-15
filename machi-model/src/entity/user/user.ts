@@ -59,7 +59,7 @@ export class UserDAO extends DAO {
   @Column({ type: "date", nullable: true })
   @IsString()
   @IsOptional()
-  birtyday?: string;
+  birthday?: string;
 
   @Column(
     {

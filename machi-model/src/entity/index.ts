@@ -1,4 +1,4 @@
-export { removeIndex } from "./common/entity.ts";
+export * from "./common/entity.ts";
 export * from "./user/index.ts";
 import { DAO } from "./common/entity.ts";
 import { UserDAO } from "./user/index.ts";
