@@ -1,0 +1,9 @@
+title: ResponseUser.v1
+type: object
+properties:
+  body:
+    $ref: ./User.v1.yaml
+  errors:
+    type: array
+    items:
+      $ref: ./ResponseError.v1.yaml
