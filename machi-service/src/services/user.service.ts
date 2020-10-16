@@ -1,10 +1,13 @@
+import { FindConditions } from "../../../machi-model/deps.ts";
 import {
   Connection,
   Database,
+  FindResult,
   Injectable,
   isDefined,
   Repository,
   requireDefined,
+  toFindResult,
   User,
   UserDAO,
 } from "../../deps.ts";
@@ -43,9 +46,25 @@ export class UserService {
     return raw ? raw._id : undefined;
   }
 
+  private async findDAOByQuery(
+    repository: Repository<UserDAO>,
+    query: FindConditions<UserDAO>,
+  ): Promise<UserDAO[]> {
+    return repository.find({ where: query });
+  }
+
   async get(id: string): Promise<User | undefined> {
     try {
       return await this.getDAOById(await this.repository(), id);
+    } finally {
+      this.close();
+    }
+  }
+
+  async find(query: FindConditions<UserDAO>): Promise<FindResult<User>> {
+    try {
+      const found = await this.findDAOByQuery(await this.repository(), query);
+      return toFindResult(found);
     } finally {
       this.close();
     }

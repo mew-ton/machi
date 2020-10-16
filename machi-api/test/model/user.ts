@@ -22,14 +22,14 @@ export function mockUser2(): User {
     id: "mock-002",
     name: "松永光一",
     email: "lightone@example.com",
-    password: "qdzZaRwxFF",
+    password: "qdz3aRwxFF",
     birthday: "1970/05/24",
     gender: Gender.Male,
     phoneNumber: "055-872-8780",
     address: {
       prefecture: "山梨県",
       postalCode: "	400-0111",
-      address: "甲斐市	竜王新町	3-8-11	",
+      address: "甲斐市竜王新町3-8-11",
     },
   };
 }
@@ -46,7 +46,7 @@ export function mockUser3(): User {
     address: {
       prefecture: "鹿児島県",
       postalCode: "894-2601",
-      address: "大島郡瀬戸内町	与路	2-15	与路タワー418",
+      address: "大島郡瀬戸内町与路2-15与路タワー418",
     },
   };
 }
