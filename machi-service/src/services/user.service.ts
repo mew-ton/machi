@@ -55,7 +55,8 @@ export class UserService {
 
   async get(id: string): Promise<User | undefined> {
     try {
-      return await this.getDAOById(await this.repository(), id);
+      const response = await this.getDAOById(await this.repository(), id);
+      return UserDAO.toModel(response);
     } finally {
       this.close();
     }
@@ -63,7 +64,8 @@ export class UserService {
 
   async find(query: FindConditions<UserDAO>): Promise<FindResult<User>> {
     try {
-      const found = await this.findDAOByQuery(await this.repository(), query);
+      const found = (await this.findDAOByQuery(await this.repository(), query))
+        .map((f) => UserDAO.toModel(f) as User);
       return toFindResult(found);
     } finally {
       this.close();
@@ -75,7 +77,9 @@ export class UserService {
       const repository = await this.repository();
       await repository.insert(user as UserDAO);
 
-      return requireDefined(await this.getDAOById(repository, user.id));
+      return requireDefined(
+        UserDAO.toModel(await this.getDAOById(repository, user.id)),
+      );
     } finally {
       this.close();
     }
@@ -88,7 +92,9 @@ export class UserService {
       const rawId = requireDefined(await this.getIndexById(repository, id));
       await repository.update(rawId, { ...user, id, _id: rawId });
 
-      return requireDefined(await this.getDAOById(repository, id));
+      return requireDefined(
+        UserDAO.toModel(await this.getDAOById(repository, id)),
+      );
     } finally {
       this.close();
     }

@@ -40,4 +40,4 @@ export { Singleton } from "https://deno.land/x/alosaur@v0.23.0/mod.ts";
 
 export * as log from "https://deno.land/std@0.74.0/log/mod.ts";
 
-export { clone } from "../machi-common/index.ts";
+export { clone, isDefined } from "../machi-common/index.ts";

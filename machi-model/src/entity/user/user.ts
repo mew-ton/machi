@@ -1,6 +1,8 @@
 import {
+  clone,
   Column,
   Entity,
+  isDefined,
   IsEmail,
   IsNotEmpty,
   IsOptional,
@@ -84,6 +86,14 @@ export class UserDAO extends DAO {
   @IsOptional()
   @ValidateNested()
   address?: Address;
+
+  public static toModel(user: UserDAO | undefined): User | undefined {
+    if (isDefined(user)) {
+      const cloned: User = clone(user);
+      delete cloned._id;
+      return cloned;
+    }
+  }
 }
 
 export const User = UserDAO;
