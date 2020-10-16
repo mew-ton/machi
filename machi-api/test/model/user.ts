@@ -3,7 +3,7 @@ import { Gender, User } from "../../deps.ts";
 export function mockUser1(): User {
   return {
     id: "mock-001",
-    name: "小松詩乃",
+    name: "小山詩乃",
     email: "shino1969@example.com",
     password: "tvXdV5AQEs",
     birthday: "1969/01/31",

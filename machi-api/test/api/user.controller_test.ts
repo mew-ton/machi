@@ -1,14 +1,15 @@
 import {
   container,
   expect,
+  Gender,
   QueryDeepPartialEntity,
   Rhum,
+  User,
   UserDAO,
 } from "../../deps_test.ts";
 import { database } from "../util/database.ts";
 import { del, get, post, put } from "../util/client.ts";
 import { mockUser1, mockUser2, mockUser3, mockUsers } from "../model/user.ts";
-import { Gender, log, User } from "../../deps.ts";
 
 function url(path: string) {
   return `http://localhost:8000/api/v1/${path}`;
