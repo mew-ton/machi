@@ -23,6 +23,7 @@ export {
   Column,
   createConnection,
   Entity,
+  FindOperator,
   Index,
   JoinColumn,
   OneToOne,
@@ -32,6 +33,7 @@ export {
 export type {
   Connection,
   ConnectionOptions,
+  FindConditions,
 } from "https://denolib.com/denolib/typeorm@v0.2.23-rc9/mod.ts";
 
 export { Singleton } from "https://deno.land/x/alosaur@v0.23.0/mod.ts";

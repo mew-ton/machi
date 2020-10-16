@@ -8,3 +8,5 @@ export { expect } from "https://deno.land/x/expect/mod.ts";
 
 export { Database, UserDAO } from "../machi-model/index.ts";
 export type { NotIndexed } from "../machi-model/index.ts";
+
+export { Gender, User } from "../machi-model/index.ts";

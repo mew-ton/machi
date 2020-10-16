@@ -3,10 +3,8 @@ type: object
 description: ''
 x-examples:
   found user by id:
-    query:
-      id: 1
     size: 1
-    users:
+    list:
     - id: 1
       name: string
       email: user@example.com
@@ -19,11 +17,9 @@ x-examples:
         postalCode: string
         address: string
 properties:
-  query:
-    "$ref": "./Query.v1.yaml"
   size:
     type: integer
-  users:
+  list:
     type: array
     items:
       "$ref": "./User.v1.yaml"

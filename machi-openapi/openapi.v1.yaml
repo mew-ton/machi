@@ -85,7 +85,7 @@ paths:
             operationId: get-user-id
     "/users":
         get:
-            summary: Your GET endpoint
+            summary: get (find) users
             tags: []
             responses:
                 "200":
@@ -94,26 +94,10 @@ paths:
                     content:
                         application/json:
                             schema:
-                                "$ref": "#/components/schemas/User"
+                                "$ref": "#/components/schemas/Users"
                             examples: {}
             operationId: get-user
         parameters: []
-    "/users/find":
-        post:
-            summary: ""
-            operationId: post-users-find
-            responses:
-                "200":
-                    description: OK
-                    content:
-                        application/json:
-                            schema:
-                                "$ref": "#/components/schemas/User"
-            requestBody:
-                content:
-                    application/json:
-                        schema:
-                            "$ref": "#/components/schemas/UserQuery"
 components:
     schemas:
         ResponseError:
@@ -126,6 +110,4 @@ components:
             "$ref": "./models/Users.v1.yaml#/"
         UserDraft:
             "$ref": "./models/UserDraft.v1.yaml#/"
-        UserQuery:
-            "$ref": "./models/UserQuery.v1.yaml"
 

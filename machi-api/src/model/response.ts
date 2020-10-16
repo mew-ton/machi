@@ -71,8 +71,10 @@ export function asBadRequest<T>(
   }
 }
 
-export function notFound(): Response<unknown> {
-  return Content(status.status(NOT_FOUND), NOT_FOUND) as ResponseError<unknown>;
+export function notFound<T>(body: T): Response<T>;
+export function notFound(): Response<unknown>;
+export function notFound<T>(body?: T): Response<T | unknown> {
+  return Content(body, NOT_FOUND) as ResponseError<T | unknown>;
 }
 
 function validReeuqstError(errors: unknown): (typeof ValidationError)[] {
