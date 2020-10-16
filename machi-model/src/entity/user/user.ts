@@ -18,17 +18,17 @@ import { TableName } from "../common/tableName.ts";
 
 export class Address {
   @Column({ type: String, nullable: true })
-  @IsString()
+  @IsString({ message: "都道府県はstringで指定してください" })
   @IsOptional()
   prefecture?: string;
 
   @Column({ type: String, nullable: true })
-  @IsString()
+  @IsString({ message: "郵便番号はstringで指定してください" })
   @IsOptional()
   postalCode?: string;
 
   @Column({ type: String, nullable: true })
-  @IsString()
+  @IsString({ message: "住所はstringで指定してください" })
   @IsOptional()
   address?: string;
 }
@@ -36,12 +36,12 @@ export class Address {
 @Entity(TableName.User)
 export class UserDAO extends DAO {
   @Column({ type: String, nullable: false, unique: true })
-  @IsString()
-  @IsNotEmpty()
+  @IsString({ message: "IDはstringで指定してください" })
+  @IsNotEmpty({ message: "IDを入力してください" })
   id!: string;
 
   @Column({ type: String, nullable: false })
-  @IsString()
+  @IsString({ message: "nameはstringで指定してください" })
   @IsNotEmpty({ message: "名前を入力してください" })
   name!: string;
 
@@ -51,7 +51,7 @@ export class UserDAO extends DAO {
   email!: string;
 
   @Column({ type: String, nullable: true })
-  @IsString()
+  @IsString({ message: "passwordはstringで指定してください" })
   @MinLength(8, { message: "パスワードが短すぎます" })
   @ContainsNumber({ message: "数字を含めてください" })
   @ContainsAlpha({ message: "アルファベットを含めてください" })
@@ -59,7 +59,7 @@ export class UserDAO extends DAO {
   password!: string;
 
   @Column({ type: "date", nullable: true })
-  @IsString()
+  @IsString({ message: "誕生日はstringで指定してください" })
   @IsOptional()
   birthday?: string;
 
@@ -72,13 +72,13 @@ export class UserDAO extends DAO {
       },
     },
   )
-  @IsString()
+  @IsString({ message: "性別はstringで指定してください" })
   @IsOptional()
   gender?: Gender;
 
   @Column({ type: String, nullable: true })
   @IsPhoneNumber("jp", { message: "電話番号の形式が不正です" })
-  @IsString()
+  @IsString({ message: "電話番号はstringで指定してください" })
   @IsOptional()
   phoneNumber?: string;
 
